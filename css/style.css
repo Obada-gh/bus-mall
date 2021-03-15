@@ -1,7 +1,7 @@
 img {
     width: 300px;
     height: 300px;
-    border: 10px solid cornflowerblue;
+    border: 10px solid rgb(221, 99, 51);
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -15,6 +15,7 @@ img {
 
 header nav ul li a:hover {
     color: rgb(248, 7, 7);
+    display: inline;
 }
 
 header nav ul li a {
@@ -42,5 +43,6 @@ header {
 }
 
 body{
-    background-color: teal;
+    background-color: rgb(238, 199, 176);
 }
+
