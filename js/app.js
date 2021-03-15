@@ -122,6 +122,8 @@ function render() {
             document.body.appendChild(result);
         }
 
+        chart();
+
 
     }
 
@@ -130,6 +132,123 @@ function render() {
 
 
  }
+
+ function chart() {
+
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let getNames=[];
+    let getLikes=[];
+    let getViews=[];
+
+    for (let index = 0; index < Store.all.length; index++) {
+        getViews.push(Store.all[index].views);
+        
+    }
+
+      for (let index = 0; index < Store.all.length; index++) {
+          getNames.push(Store.all[index].name);
+          
+          
+      }
+
+      for (let index = 0; index < Store.all.length; index++) {
+        getLikes.push(Store.all[index].likes);
+        
+        
+    }
+    let chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'horizontalBar',
+    
+        // The data for our dataset
+        data: {
+            labels: getNames,
+            datasets: [{
+                label: 'likes',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: getLikes,
+                backgroundColor: [
+                    'rgba(256, 99, 132, 0.2)',
+                    'rgba(86, 162, 235, 0.2)',
+                    'rgba(36, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(99, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(22, 206, 86, 0.2)',
+                    'rgba(36, 192, 192, 0.2)',
+                    'rgba(100, 102, 255, 0.2)',
+                    'rgba(299, 159, 64, 0.2)',
+                    'rgba(233, 99, 132, 0.2)',
+                    'rgba(66, 162, 235, 0.2)',
+                    'rgba(96, 206, 86, 0.2)',
+                    'rgba(85, 192, 192, 0.2)',
+                    'rgba(23, 102, 255, 0.2)',
+                    'rgba(44, 159, 64, 0.2)',
+                    'rgba(96, 99, 132, 0.2)',
+                    'rgba(44, 162, 235, 0.2)',
+                    'rgba(23, 206, 86, 0.2)',
+                    'rgba(99, 192, 192, 0.2)',
+                    'rgba(23, 102, 255, 0.2)',
+                    'rgba(46, 159, 64, 0.2)',
+                    'rgba(17, 159, 64, 0.2)',
+                ],
+
+               
+            
+            },{
+                label: 'Views',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: getViews,
+
+                backgroundColor: [
+                   
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(0,0,0)',
+                    'rgba(255,255,255)',
+                    'rgba(255,0,0)',
+                    'rgba(0,255,0)',
+                    'rgba(0,0,255)',
+                    'rgba(255,255,0)',
+                    'rgba(0,255,255)',
+                    'rgba(255,0,255)',
+                     'rgba(192,192,192)',
+                    'rgba(128,128,128)',
+                    'rgba(128,0,0)',
+                    'rgba(128,128,0)',
+                    'rgba(0,128,0)',
+                    'rgba(128,0,128)',
+                    'rgba(0,128,128)',
+                    'rgba(0,0,128)',
+                    'rgba(22, 206, 86, 0.2)',
+                    'rgba(36, 192, 192, 0.2)',
+                    'rgba(100, 102, 255, 0.2)',
+                    'rgba(299, 159, 64, 0.2)',
+                    'rgba(233, 99, 132, 0.2)',
+                ],
+
+
+                
+            }],
+            labels: getNames,
+        },
+    
+        // Configuration options go here
+        options: {},
+        
+    });
+     
+ }
+
+ 
+
 
  
 
