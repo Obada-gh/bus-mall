@@ -1,3 +1,5 @@
+'use strict'
+
 let names = ['bag.jpg','banana.jpg','bathroom.jpg',
 'boots.jpg','breakfast.jpg','bubblegum.jpg',
 'chair.jpg','cthulhu.jpg','dog-duck.jpg',
