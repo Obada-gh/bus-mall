@@ -115,8 +115,8 @@ function handler(event) {
         chart();
 
         localStorage.setItem('products', JSON.stringify(Store.all));
-
-    
+        getData();
+       
          
     }
 
@@ -239,7 +239,7 @@ function chart() {
 
 }
 
-function getCoffeeOrders(){
+function getData(){
     // retrieve data from local storage
     const data = localStorage.getItem('products');
     // convert the data (array) from a string to something that we can use in JavaScript.
